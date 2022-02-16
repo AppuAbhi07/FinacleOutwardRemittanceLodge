@@ -1,0 +1,38 @@
+server:
+  port: 9194
+spring:
+      
+  application:
+    name: FINACLE-BALANCE-INQ
+  zipkin:
+    enabled: true
+    base-url: http://localhost:9411/
+
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone : http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+logging:
+  file:
+    name: C:\Abhishek\logs\microservices.log
+    
+management:
+   endpoint: 
+     shutdown:
+       enabled: true
+   endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
+
+
+       
+       
+       
+       
+      
