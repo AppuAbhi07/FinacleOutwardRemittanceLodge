@@ -1,9 +1,9 @@
 server:
-  port: 9194
+  port: 9199
 spring:
       
   application:
-    name: FINACLE-BALANCE-INQ
+    name: FINACLE-OUTWARD-REMITTANCE-LODGE
   zipkin:
     enabled: true
     base-url: http://localhost:9411/

@@ -1,0 +1,679 @@
+<wsdl:definitions
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:sch="https://dcdmisapppr01.idbibank.com/14000/FISERVLET/fihttp"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="https://dcdmisapppr01.idbibank.com/14000/FISERVLET/fihtt"
+	targetNamespace="https://dcdmisapppr01.idbibank.com/14000/FISERVLET/fihtt">
+	<wsdl:types>
+		<xs:schema
+			xmlns:tns="https://dcdmisapppr01.idbibank.com/14000/FISERVLET/fihttp"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			elementFormDefault="qualified"
+			targetNamespace="https://dcdmisapppr01.idbibank.com/14000/FISERVLET/fihttp">
+			<xs:element name="OutwardRemittanceLodgeRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="OutwardRemittanceLodgeRq">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="CritDtls">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="solId" type="xs:string" />
+												<xs:element name="remittanceId" type="xs:string" />
+												<xs:element name="remittanceType"
+													type="xs:string" />
+												<xs:element name="remittanceCrncy"
+													type="xs:string" />
+												<xs:element name="cifId" type="xs:string" />
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="GeneralDtls">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="NotionalRateValue"
+													type="xs:string" />
+												<xs:element name="NotionalRateCode"
+													type="xs:string" />
+												<xs:element name="OperAcctId">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="foracid" type="xs:string" />
+															<xs:element name="crncyCode" type="xs:string" />
+															<xs:element name="solId" type="xs:string" />
+															<xs:element name="acctName" type="xs:string" />
+															<xs:element name="acctShortName"
+																type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="OperChrgAcctId">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="foracid" type="xs:string" />
+															<xs:element name="crncyCode" type="xs:string" />
+															<xs:element name="solId" type="xs:string" />
+															<xs:element name="acctName" type="xs:string" />
+															<xs:element name="acctShortName"
+																type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="CustAddrDtls">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="AddressDtls">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="Addr1" type="xs:string" />
+																		<xs:element name="Addr2" type="xs:string" />
+																		<xs:element name="Addr3" type="xs:string" />
+																		<xs:element name="City" type="xs:string" />
+																		<xs:element name="StateProv"
+																			type="xs:string" />
+																		<xs:element name="PostalCode"
+																			type="xs:string" />
+																		<xs:element name="Country" type="xs:string" />
+																		<xs:element name="AddrType"
+																			type="xs:string" />
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="name" type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="RemittanceAmt">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="amountValue"
+																type="xs:string" />
+															<xs:element name="currencyCode"
+																type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="lodgeDate" type="xs:string" />
+												<xs:element name="transitPeriod" type="xs:string" />
+												<xs:element name="gracePeriod" type="xs:string" />
+												<xs:element name="remitCntryCode"
+													type="xs:string" />
+												<xs:element name="purposeOfRemitCode"
+													type="xs:string" />
+												<xs:element name="CollBankCode" type="xs:string" />
+												<xs:element name="CollBranchCode"
+													type="xs:string" />
+												<xs:element name="CollBankAddrDtls">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="AddressDtls"
+																type="xs:string" />
+															<xs:element name="name" type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="passport" type="xs:string" />
+												<xs:element name="cntryOfVistCode"
+													type="xs:string" />
+												<xs:element name="encashCert" type="xs:string" />
+												<xs:element name="rptPurSaleInd" type="xs:string" />
+												<xs:element name="otherBankRefNum"
+													type="xs:string" />
+												<xs:element name="refDate" type="xs:string" />
+												<xs:element name="regApprovalRefNo"
+													type="xs:string" />
+												<xs:element name="remitCrncy" type="xs:string" />
+												<xs:element name="advAgainstExp" type="xs:string" />
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="RemInstrDtls">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="totalInstrmntAmt">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="amountValue"
+																type="xs:string" />
+															<xs:element name="currencyCode"
+																type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="RemInstrDtlsRec">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="draweeBranchDtls">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="BranchCode"
+																			type="xs:string" />
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="draweeBankDtls">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="BankName"
+																			type="xs:string" />
+																		<xs:element name="bankCode"
+																			type="xs:string" />
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="instrIndicator"
+																type="xs:string" />
+															<xs:element name="instrmntType"
+																type="xs:string" />
+															<xs:element name="instrmntDate"
+																type="xs:string" />
+															<xs:element name="instrmntNum"
+																type="xs:string" />
+															<xs:element name="instrmntAlpha"
+																type="xs:string" />
+															<xs:element name="inventoryType"
+																type="xs:string" />
+															<xs:element name="instrAmt">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="amountValue"
+																			type="xs:string" />
+																		<xs:element name="currencyCode"
+																			type="xs:string" />
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="instrmntStatus"
+																type="xs:string" />
+															<xs:element name="instrmntQnty"
+																type="xs:string" />
+															<xs:element name="RecDelFlg" type="xs:string" />
+															<xs:element name="DraweeAddrDtls">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="AddressDtls"
+																			type="xs:string" />
+																		<xs:element name="name" type="xs:string" />
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="DraweeBankAddrDtls">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="AddressDtls"
+																			type="xs:string" />
+																		<xs:element name="name" type="xs:string" />
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="draweeBankBICcode"
+																type="xs:string" />
+															<xs:element name="SerialNum" type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="RemPartyDtls">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="cifId" type="xs:string" />
+												<xs:element name="BenAddrDtls">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="AddressDtls"
+																type="xs:string" />
+															<xs:element name="name" type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="BenefBankAddrDtls">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="AddressDtls"
+																type="xs:string" />
+															<xs:element name="name" type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="CorrespondentBankAddrDtls">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="AddressDtls"
+																type="xs:string" />
+															<xs:element name="name" type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="RemMiscDtls">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="draweeCode" type="xs:string" />
+												<xs:element name="draweeCenterCode"
+													type="xs:string" />
+												<xs:element name="eefcRate">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="value" type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="eefcAmt">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="amountValue"
+																type="xs:string" />
+															<xs:element name="currencyCode"
+																type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="crncyDclrFormDtls"
+													type="xs:string" />
+												<xs:element name="formICertNo" type="xs:string" />
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="RemDocumentDtlsRec">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="DocRefCode" type="xs:string" />
+												<xs:element name="DocNum" type="xs:string" />
+												<xs:element name="Dt" type="xs:string" />
+												<xs:element name="CurCode" type="xs:string" />
+												<xs:element name="Amt">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="amountValue"
+																type="xs:string" />
+															<xs:element name="currencyCode"
+																type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="Original" type="xs:string" />
+												<xs:element name="Duplicate" type="xs:string" />
+												<xs:element name="Remarks" type="xs:string" />
+												<xs:element name="SerialNum" type="xs:string" />
+												<xs:element name="recDelFlg" type="xs:string" />
+												<xs:element name="docEvent" type="xs:string" />
+												<xs:element name="docMandFlg" type="xs:string" />
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="RemInstructionDtlsRec">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="InstructionBy" type="xs:string" />
+												<xs:element name="InstructionDescCode"
+													type="xs:string" />
+												<xs:element name="InstructionDt" type="xs:string" />
+												<xs:element name="SerialNum" type="xs:string" />
+												<xs:element name="InstructionSubClass"
+													type="xs:string" />
+												<xs:element name="RecDelFlg" type="xs:string" />
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="RemCurrEventDtls">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="paySysId" type="xs:string" />
+												<xs:element name="nostroValueDate"
+													type="xs:string" />
+												<xs:element name="BillEventDtls">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="CustPrefInt">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="value" type="xs:string" />
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="TrnTypeSubType">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="TrnType" type="xs:string" />
+																		<xs:element name="TrnSubtype"
+																			type="xs:string" />
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="IntLiability"
+																type="xs:string" />
+															<xs:element name="IntCalculation"
+																type="xs:string" />
+															<xs:element name="IntPegFlg" type="xs:string" />
+															<xs:element name="PegFrequencyInMonths"
+																type="xs:string" />
+															<xs:element name="PegFrequencyInDays"
+																type="xs:string" />
+															<xs:element name="IntPeriodTableCode"
+																type="xs:string" />
+															<xs:element name="IntOperationCode"
+																type="xs:string" />
+															<xs:element name="PurchaseSaleRec">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="PSTPurchaseSaleIndicator"
+																			type="xs:string" />
+																		<xs:element name="PSTAcct">
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element name="foracid"
+																						type="xs:string" />
+																					<xs:element name="crncyCode"
+																						type="xs:string" />
+																					<xs:element name="solId"
+																						type="xs:string" />
+																					<xs:element name="acctName"
+																						type="xs:string" />
+																					<xs:element name="acctShortName"
+																						type="xs:string" />
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																		<xs:element name="PSTRefCurCode"
+																			type="xs:string" />
+																		<xs:element name="PSTRefAmt">
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element name="amountValue"
+																						type="xs:string" />
+																					<xs:element name="currencyCode"
+																						type="xs:string" />
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																		<xs:element name="PSTForwardContractNum"
+																			type="xs:string" />
+																		<xs:element name="PSTTreasuryRateRefCode"
+																			type="xs:string" />
+																		<xs:element name="PSTTreasuryRate">
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element name="value"
+																						type="xs:string" />
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																		<xs:element name="PSTRateRefCode"
+																			type="xs:string" />
+																		<xs:element name="PSTRate">
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element name="value"
+																						type="xs:string" />
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																		<xs:element name="PSTTrnCurCode"
+																			type="xs:string" />
+																		<xs:element name="PSTTrnAmt">
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element name="amountValue"
+																						type="xs:string" />
+																					<xs:element name="currencyCode"
+																						type="xs:string" />
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																		<xs:element name="PSTCollectSwapCharges"
+																			type="xs:string" />
+																		<xs:element name="PSTPurposeRefCode"
+																			type="xs:string" />
+																		<xs:element name="PSTTypeRefCode"
+																			type="xs:string" />
+																		<xs:element name="PSTModeRemit"
+																			type="xs:string" />
+																		<xs:element name="PSTTreasuryRefNum"
+																			type="xs:string" />
+																		<xs:element name="pstDelFlg"
+																			type="xs:string" />
+																		<xs:element name="SerialNum"
+																			type="xs:string" />
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="BillPrefInt">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="value" type="xs:string" />
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="EventAmt">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="amountValue"
+																			type="xs:string" />
+																		<xs:element name="currencyCode"
+																			type="xs:string" />
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="eventRateCode"
+																type="xs:string" />
+															<xs:element name="eventRateValue"
+																type="xs:string" />
+															<xs:element name="intCode" type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="notionalRateCode"
+													type="xs:string" />
+												<xs:element name="notionalRateValue"
+													type="xs:string" />
+												<xs:element name="consolFlg" type="xs:string" />
+												<xs:element name="interestRateCode"
+													type="xs:string" />
+												<xs:element name="interestRateValue"
+													type="xs:string" />
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="RemTranDtlsRec">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="SerialNum" type="xs:string" />
+												<xs:element name="TrnAcctId">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="foracid" type="xs:string" />
+															<xs:element name="crncyCode" type="xs:string" />
+															<xs:element name="solId" type="xs:string" />
+															<xs:element name="acctName" type="xs:string" />
+															<xs:element name="acctShortName"
+																type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="RefAmt">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="amountValue"
+																type="xs:string" />
+															<xs:element name="currencyCode"
+																type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="TreasuryRateRefCode"
+													type="xs:string" />
+												<xs:element name="TreasuryRate">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="value" type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="TreasuryRefNum"
+													type="xs:string" />
+												<xs:element name="RateCode" type="xs:string" />
+												<xs:element name="Rate">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="value" type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="ValueDt" type="xs:string" />
+												<xs:element name="RefNum" type="xs:string" />
+												<xs:element name="TrnParticularsRefCode"
+													type="xs:string" />
+												<xs:element name="TrnParticulars"
+													type="xs:string" />
+												<xs:element name="RptRefCode" type="xs:string" />
+												<xs:element name="DrCrFlg" type="xs:string" />
+												<xs:element name="RefDtls" type="xs:string" />
+												<xs:element name="Remarks" type="xs:string" />
+												<xs:element name="TrnAmt">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="amountValue"
+																type="xs:string" />
+															<xs:element name="currencyCode"
+																type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="fwdContractNum"
+													type="xs:string" />
+												<xs:element name="refCurCode" type="xs:string" />
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="RemChargeDtls">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="chrgEventId" type="xs:string" />
+												<xs:element name="RemEntityChargeRec">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="SerialNum" type="xs:string" />
+															<xs:element name="ChargeEventId"
+																type="xs:string" />
+															<xs:element name="CalculatedAmt">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="amountValue"
+																			type="xs:string" />
+																		<xs:element name="currencyCode"
+																			type="xs:string" />
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="CalculatedAmtCur"
+																type="xs:string" />
+															<xs:element name="ChargesPayableBy"
+																type="xs:string" />
+															<xs:element name="ChargeDebitAcctId"
+																type="xs:string" />
+															<xs:element name="ChargeRateCode"
+																type="xs:string" />
+															<xs:element name="ChargeRate">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="value" type="xs:string" />
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="ChargeSplitPercent">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="value" type="xs:string" />
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="ChargeSplitAmt">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="amountValue"
+																			type="xs:string" />
+																		<xs:element name="currencyCode"
+																			type="xs:string" />
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="TrnRemarks" type="xs:string" />
+															<xs:element name="chargeDebitAcctName"
+																type="xs:string" />
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="OutwardRemittanceLodge_CustomData"
+							type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OutwardRemittanceLodgeResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="OutwardRemittanceLodgeRs">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="remittanceId" type="xs:string" />
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="OutwardRemittanceLodge_CustomData"
+							type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="OutwardRemittanceLodgeResponse">
+		<wsdl:part element="sch:OutwardRemittanceLodgeResponse"
+			name="OutwardRemittanceLodgeResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="OutwardRemittanceLodgeRequest">
+		<wsdl:part element="sch:OutwardRemittanceLodgeRequest"
+			name="OutwardRemittanceLodgeRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="ItemEndPoint">
+		<wsdl:operation name="OutwardRemittanceLodge">
+			<wsdl:input message="tns:OutwardRemittanceLodgeRequest"
+				name="OutwardRemittanceLodgeRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:OutwardRemittanceLodgeResponse"
+				name="OutwardRemittanceLodgeResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ItemEndPointSoap11"
+		type="tns:ItemEndPoint">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="OutwardRemittanceLodge">
+			<soap:operation soapAction="" />
+			<wsdl:input name="OutwardRemittanceLodgeRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="OutwardRemittanceLodgeResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ItemEndPointService">
+		<wsdl:port binding="tns:ItemEndPointSoap11"
+			name="ItemEndPointSoap11">
+			<soap:address location="http://localhost:8080/ws" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
